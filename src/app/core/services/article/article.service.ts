@@ -16,6 +16,9 @@ export class ArticleService {
   getArticle():Observable<{data:Article[]}>{
     return this.http.get<{data:Article[]}>(`${this.url}articles`)
   }
+  getArticleById(id:number):Observable<Article>{
+    return this.http.get<Article>(`${this.url}articles/${id}`)
+  }
 
   createArticle(data: FormData){
     const headers = this.userlocalService.getAuthHeaders();
@@ -23,6 +26,11 @@ export class ArticleService {
     return this.http.post(this.url + 'articles', data,{ headers })
   }
 
+
+  updateArticle(id:number,data:any){
+    const headers = this.userlocalService.getAuthHeaders();
+    return this.http.put(`${this.url}articles/${id}`,data,{ headers })
+  }
   deleteArticle(id:number){
     const headers = this.userlocalService.getAuthHeaders();
     return this.http.delete(`${this.url}articles/${id}`,{ headers })
