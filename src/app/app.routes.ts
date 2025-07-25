@@ -1,3 +1,4 @@
+import { ArticleListComponent } from './pages/article-list/article-list.component';
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -25,5 +26,10 @@ export const routes: Routes = [
     {
         path:'edit/:id',
         component:EditArticleComponent
+    }
+    ,
+    {
+        path:'list',
+        component:ArticleListComponent
     }
 ];

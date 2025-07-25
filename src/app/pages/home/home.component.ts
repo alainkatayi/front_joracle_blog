@@ -5,10 +5,11 @@ import { ArticleService } from '../../core/services/article/article.service';
 import { ArticleCardComponent } from "../article-card/article-card.component";
 import { UserLocalService } from '../../core/services/userLocal/user-local.service';
 import { AuthLoginResponse } from '../../core/models/auth';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, ArticleCardComponent],
+  imports: [HeaderComponent, ArticleCardComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
