@@ -1,0 +1,59 @@
+<div *ngIf="showToast" class="fixed top-0 left-0 w-full z-50 flex justify-center">
+  <div [ngClass]="{
+      'bg-green-500': toastType === 'success',
+      'bg-red-500': toastType === 'error'
+    }"
+    class="text-white px-6 py-3 rounded-b shadow-md w-full max-w-md mx-auto flex justify-between items-center animate-slide-down">
+    <p class="text-lg text-center font-semibold">{{ toastMessage }}</p>
+  </div>
+</div>
+
+
+<div class="bg-gray-100 flex items-center justify-center min-h-screen px-4">
+
+  <div class="w-full max-w-3xl bg-white shadow-lg rounded-2xl p-8 space-y-6">
+    <h2 class="text-3xl font-bold text-gray-800">Créer un nouvel article</h2>
+    
+    <form [formGroup]="createArticleForm" (ngSubmit)="onSubmit()" class="space-y-5">
+      <!-- Titre -->
+      <div>
+        <label for="titre" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+        <input formControlName="title" type="text" id="titre" name="titre"
+               class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+               placeholder="Entrez le titre de l'article" />
+      </div>
+
+      <!-- Slug -->
+      <div>
+        <label for="slug" class="block text-sm font-medium text-gray-700 mb-1">Slug</label>
+        <input formControlName="slug" type="text" id="slug" name="slug"
+               class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+               placeholder="ex: la-grace-de-dieu" />
+      </div>
+              <!-- Photo -->
+      <div>
+        <label for="photo" class="block text-sm font-medium text-gray-700 mb-1">Photo</label>
+        <input formControlName="photo" (change)="onFileSelected($event)" #fileInput type="file" id="photo" name="photo"
+               class="w-full border border-gray-300 rounded-lg px-3 py-2 file:bg-red-600 file:text-white file:rounded file:px-4 file:py-2 file:cursor-pointer" />
+      </div>
+
+      <!-- Contenu -->
+      <div>
+        <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Contenu</label>
+        <textarea formControlName="content" id="content" name="content" rows="6"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="Écrivez le contenu ici..."></textarea>
+      </div>
+
+      <!-- Bouton -->
+      <div class="text-right pt-4">
+        <button type="submit"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-200">
+          Publier l'article
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
