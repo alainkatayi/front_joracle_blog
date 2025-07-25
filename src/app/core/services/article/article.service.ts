@@ -23,4 +23,9 @@ export class ArticleService {
     return this.http.post(this.url + 'articles', data,{ headers })
   }
 
+  deleteArticle(id:number){
+    const headers = this.userlocalService.getAuthHeaders();
+    return this.http.delete(`${this.url}articles/${id}`,{ headers })
+  }
+
 }
