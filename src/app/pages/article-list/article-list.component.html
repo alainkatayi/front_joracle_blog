@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<!-- Section d'introduction -->
+<section class="bg-gradient-to-r from-red-800 via-red-700 to-black text-white py-16 px-4 text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">Tous nos articles</h1>
+  <p class="text-lg md:text-xl max-w-3xl mx-auto">
+    Découvrez nos enseignements, témoignages et études bibliques pour nourrir votre foi.
+  </p>
+</section>
+
+<!-- Section des cartes d'articles -->
+<section class="bg-gray-100 min-h-screen px-6 py-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    @for (article of articles; track article.id) {
+      <app-article-card [article]="article"></app-article-card>
+    }
+  </div>
+</section>
+
+<app-footer></app-footer>
