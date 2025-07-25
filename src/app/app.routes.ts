@@ -17,4 +17,8 @@ export const routes: Routes = [
         path:'dashboard',
         component:DashboardComponent
     },
+    {
+        path:'create',
+        component:CreateArticleComponent
+    }
 ];
