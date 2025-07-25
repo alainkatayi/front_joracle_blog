@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<!-- ✅ Section Héros -->
+<section class="bg-gradient-to-r from-[#b30000] to-black text-white py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h1 class="text-5xl font-extrabold mb-4">À propos de nous</h1>
+    <p class="text-lg md:text-xl max-w-3xl mx-auto">
+      Une communauté engagée pour partager la lumière de l'Évangile à travers des articles, enseignements, témoignages et ressources bibliques profondes.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ Section Contenu principal -->
+<section class="bg-white py-16 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    
+    <!-- Texte -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-bold text-[#b30000]">Notre mission</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Nous croyons en une foi vivante, partagée et enracinée dans la Parole. Chaque contenu que nous publions a pour but d'encourager, d'enseigner et de fortifier la foi chrétienne.
+      </p>
+
+      <h2 class="text-3xl font-bold text-[#b30000]">Nos engagements</h2>
+      <ul class="list-disc pl-6 text-gray-800 space-y-2">
+        <li>Transparence et vérité biblique</li>
+        <li>Partage gratuit de connaissances spirituelles</li>
+        <li>Communauté bienveillante et solidaire</li>
+        <li>Édification continue à travers des témoignages</li>
+      </ul>
+    </div>
+
+    <!-- Image -->
+    <div>
+      <img src="/images/joracle-logo.svg"
+           alt="Foi chrétienne"
+           class="w-full rounded-3xl shadow-xl object-cover h-[400px]">
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Section CTA finale -->
+<section class="bg-gradient-to-r from-[#b30000] to-black text-white py-16 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Rejoignez le mouvement</h2>
+    <p class="text-lg mb-6">
+      Ensemble, faisons briller la lumière de la foi. Découvrez nos contenus et nourrissez votre relation avec Dieu.
+    </p>
+    <a [routerLink]="['/list']"
+       class="inline-block bg-white text-[#b30000] font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition">
+      Explorer les articles
+    </a>
+  </div>
+</section>
+
+<app-footer></app-footer>
