@@ -6,5 +6,6 @@ export interface Article {
     content:string
     slug:string
     user_id:User
+    photo:string
     created_at:string
 }
