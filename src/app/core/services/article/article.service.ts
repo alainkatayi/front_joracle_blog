@@ -17,4 +17,10 @@ export class ArticleService {
     return this.http.get<{data:Article[]}>(`${this.url}articles`)
   }
 
+  createArticle(data: FormData){
+    const headers = this.userlocalService.getAuthHeaders();
+    console.log("auth envoyé", headers)
+    return this.http.post(this.url + 'articles', data,{ headers })
+  }
+
 }
