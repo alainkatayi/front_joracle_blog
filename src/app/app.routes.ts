@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { CreateArticleComponent } from './pages/admin/create-article/create-article.component';
 import { EditArticleComponent } from './pages/admin/edit-article/edit-article.component';
+import { ArticleSingleComponent } from './pages/article-single/article-single.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +32,9 @@ export const routes: Routes = [
     {
         path:'list',
         component:ArticleListComponent
+    },
+    {
+        path:'article-single/:id',
+        component:ArticleSingleComponent
     }
 ];
