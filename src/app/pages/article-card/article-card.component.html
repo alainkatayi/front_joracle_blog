@@ -1,7 +1,11 @@
 <div class="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden">
   <!-- Image ou bannière -->
   <div class="h-48 bg-gray-200 flex items-center justify-center">
-    <span class="text-gray-500">[Espace pour photo]</span>
+    <img
+      [src]="'http://localhost:8000/storage/' + article.photo"
+      alt="Image de l'article"
+      class="h-full w-full object-cover"
+    />
   </div>
 
   <!-- Contenu -->
