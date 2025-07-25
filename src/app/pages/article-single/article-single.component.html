@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<section class="bg-gray-100 py-12 px-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+    
+    <!-- Image de couverture -->
+    <img [src]="'http://localhost:8000/storage/' + articles.photo" alt="Image de l'article"
+         class="w-full h-64 object-cover">
+
+    <div class="p-8 space-y-6">
+      <!-- Titre & Date -->
+      <div class="text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">{{ articles.title }}</h1>
+        <p class="text-sm text-gray-500 italic">Publié le {{ articles.created_at}}</p>
+      </div>
+
+      <!-- Contenu -->
+      <div class="prose max-w-none prose-lg prose-red">
+        <div [innerHTML]="articles.content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
